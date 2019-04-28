@@ -7,6 +7,7 @@
     <title>Maqueta del proyecto</title>
 </head>
 <body>
+    <!-- LAS SECCIONES DEL INDEX -->
     <!-- CEBECERA -->
     <!-- MENU -->
     
