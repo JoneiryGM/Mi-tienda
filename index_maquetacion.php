@@ -7,9 +7,11 @@
     <title>Maqueta del proyecto</title>
 </head>
 <body>
-    <!-- LAS SECCIONES DEL INDEX -->
-    <!-- CEBECERA -->
-    <!-- MENU -->
-    
+    <!-- LAS SECCIONES DEL INDEX: -->
+    <!-- 1-CEBECERA -->
+    <!-- 2-MENU -->
+    <!-- 3-BARRA LATERAL -->
+    <!-- 4-CONTENIDO CENTRAL -->
+    <!-- 5-PIE DE PAGINA -->
 </body>
 </html>
