@@ -1,30 +1,14 @@
-<h1>Bienvenido a mi WEB</h1>
-<?php
-
-require_once 'autoload.php';
-
-
-if(isset($_GET['controller']))
-{
-    $nombre_controlador = $_GET['controller'].'Controller';
-}else{
-    echo 'la pagina no existe';
-    exit();
-}
-
-
-if (isset($nombre_controlador) && class_exists($nombre_controlador)) {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maqueta del proyecto</title>
+</head>
+<body>
+    <!-- CEBECERA -->
+    <!-- MENU -->
     
-    $controlador = new $nombre_controlador();
-   /**$controlador->MostrarTodos();
-   $controlador->Crear(); */
-
-
-
-     if(isset($_GET['action']) && method_exists($controlador, $_GET['action'])){
-         $action = $_GET['action'];
-         $controlador->$action();
-     }else{
-        echo "La pagina que buscas no existe";
-     }
-}
+</body>
+</html>

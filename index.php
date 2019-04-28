@@ -7,7 +7,7 @@ require_once 'autoload.php';
 if(isset($_GET['controller']))
 {
     $nombre_controlador = $_GET['controller'].'Controller';
-    echo $nombre_controlador;
+    
 }else{
     echo 'la pagina no existe';
     exit();
@@ -20,7 +20,7 @@ if (isset($nombre_controlador) && class_exists($nombre_controlador)) {
    
      if(isset($_GET['action']) && method_exists($controlador, $_GET['action'])){
          $action = $_GET['action'];
-         $controlador->$action();
+         echo $controlador->$action();
      }else{
         echo "La metodo que buscas no existe";
      }
