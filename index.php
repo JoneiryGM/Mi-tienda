@@ -2,7 +2,8 @@
 <?php
 
 require_once 'autoload.php';
-
+require_once 'views/layout_page_principal/cabecera.php';
+require_once 'views/layout_page_principal/menu.php';
 
 if(isset($_GET['controller']))
 {
@@ -25,3 +26,6 @@ if (isset($nombre_controlador) && class_exists($nombre_controlador)) {
         echo "La metodo que buscas no existe";
      }
 }
+
+
+require_once 'views/layout_page_principal/pie_pagina.php';
