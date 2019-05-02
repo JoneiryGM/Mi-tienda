@@ -56,7 +56,8 @@ class UsuarioModel
         $this->email=$email;
     }
     public function setPass($pass){
-        $this->pass=$pass;
+        $this->pass=password_hash($this->pass, PASSWORD_BCRYPT, ['cost'=>4]);
+        
     }
     public function setRol($rol){
         $this->rol=$rol;
@@ -68,7 +69,16 @@ class UsuarioModel
 
     public function save()
     {
-        $sql = "INSERT INTO usuarios VALUES(NULL,'{$this->getNombre()}',{$this->getApellido()}',{$this->getEmail()}',{$this->getPass()}',{$this->getRol()}',{$this->getImagen()}')";
-        $registrar = $this->db->query($sql);
+        $sql = "INSERT INTO usuarios VALUES(NULL,'{$this->getNombre()}','{$this->getApellido()}','{$this->getEmail()}','{$this->getPass()}','user',null)";
+        $registrar = $this->db->query($sql);  
+        $resultado=false;
+
+        if($registrar){
+          $resultado=true;
+        }else{
+            $resultado=false;
+        }
+
+        return $resultado;
     }
 }

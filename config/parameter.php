@@ -1,5 +1,5 @@
 <?php
 
-define("base_url", "/localhost/E&J_tienda/");
+define("base_url", "http://localhost/E&J_tienda/");
 define("controller_default", "ProductosController");
-define("action_default", "index");
+define("action_default", "Index");

@@ -1,5 +1,5 @@
 <?php
-
+require_once 'models/UsuarioModel.php';
 
 class UsuarioController
 {
@@ -15,7 +15,23 @@ class UsuarioController
     public function save()
     {
         if(isset($_POST)){
-            var_dump($_POST);
+            $usuario = new UsuarioModel();
+            $usuario->setNombre($_POST['nombre']);
+            $usuario->setApellidos($_POST['apellido']);
+            $usuario->setEmail($_POST['email']);
+            $usuario->setPass($_POST['pass']);
+            
+            $save = $usuario->save();
+
+            if($save){
+                $_SESSION['register'] = "complete";
+            }else{
+                $_SESSION['register'] = "failed";
+            }
+        }else{
+            $_SESSION['register'] = "failed";
+         
         }
+        header("location:".base_url.'usuario/register');
     }
 }

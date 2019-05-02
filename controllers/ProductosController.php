@@ -3,7 +3,7 @@
 
 class ProductosController
 {
-    public function Index(){
+    public function index(){
         return 'index del productos';
     }
 }

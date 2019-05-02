@@ -1,5 +1,12 @@
 <h1>Registrarse</h1>
 
+<?php 
+if(isset($_SESSION['register'])):
+   echo $_SESSION['register'];
+endif; 
+?>
+
+
 <form action="save" method="POST">
 
 <label for="nombre">Nombre</label>
