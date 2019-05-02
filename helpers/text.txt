@@ -1,0 +1,4 @@
+los Helpers:
+
+son simplemente librerias y carpetas utiles para pequeñas tareas o clases y 
+funcionalidades que nos van a ayudar.

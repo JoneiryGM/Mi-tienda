@@ -4,6 +4,7 @@ session_start();
 require_once 'autoload.php';
 require_once 'config/DataBase.php';
 require_once 'config/parameter.php';
+require_once 'helpers/utils.php';
 require_once 'views/layout_page_principal/cabecera.php';
 require_once 'views/layout_page_principal/menu.php';
 

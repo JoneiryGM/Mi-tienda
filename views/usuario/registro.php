@@ -1,10 +1,14 @@
 <h1>Registrarse</h1>
 
 <?php 
-if(isset($_SESSION['register'])):
-   echo $_SESSION['register'];
-endif; 
-?>
+if(isset($_SESSION['register']) && $_SESSION['register'] == 'complete'): ?>
+   <strong>Registro Completado Correctamente</strong>
+ 
+<?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
+   <strong>Registro Fallido</strong>
+<?php endif; ?>
+ 
+<?php utils::deleteSession('register');?>
 
 
 <form action="save" method="POST">
