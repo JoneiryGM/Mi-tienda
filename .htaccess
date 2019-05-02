@@ -2,7 +2,7 @@
 
 # Activar rewrite
 RewriteEngine on
-ErrorDocument 404 http://localhost/E&J_tienda/
+ErrorDocument 404 http://localhost/E&J_tienda/Error
 
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
