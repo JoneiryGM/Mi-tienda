@@ -14,6 +14,8 @@ class UsuarioController
 
     public function save()
     {
-        # code...
+        if(isset($_POST)){
+            var_dump($_POST);
+        }
     }
 }

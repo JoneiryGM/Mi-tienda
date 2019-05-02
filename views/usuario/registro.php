@@ -14,5 +14,5 @@
 <label for="pass">Contraseña</label>
 <input type="password" name="pass"> <br>
 
-<input type="button" value="Registrar">
+<input type="submit" value="Registrar">
 </form>

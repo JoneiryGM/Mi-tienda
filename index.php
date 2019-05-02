@@ -2,6 +2,7 @@
 <?php
 
 require_once 'autoload.php';
+require_once 'config/parameter.php';
 require_once 'views/layout_page_principal/cabecera.php';
 require_once 'views/layout_page_principal/menu.php';
 
