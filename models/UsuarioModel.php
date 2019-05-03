@@ -47,16 +47,16 @@ class UsuarioModel
         $this->id=$id;
     }
     public function setNombre($nombre){
-        $this->nombre=$nombre;
+        $this->nombre = $this->db->real_escape_string($nombre);
     }
     public function setApellidos($apellidos){
-        $this->apellidos=$apellidos;
+        $this->apellidos = $this->db->real_escape_string($apellidos);
     }
     public function setEmail($email){
-        $this->email=$email;
+        $this->email = $this->db->real_escape_string($email);
     }
     public function setPass($pass){
-        $this->pass=password_hash($this->pass, PASSWORD_BCRYPT, ['cost'=>4]);
+        $this->pass = password_hash($this->db->real_escape_string($pass), PASSWORD_BCRYPT, ['cost'=>4]);
         
     }
     public function setRol($rol){
