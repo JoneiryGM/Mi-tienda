@@ -49,13 +49,13 @@
         <!-- 3-BARRA LATERAL -->
         <aside id="lateral"> 
            <div id="login" class="block_aside">
-
+              <h3>Entrar a la Web</h3>
              <form action="" method="post">
                <label for="email">E-mail</label>
-               <input type="email" name="email"> <br>
+               <input type="email" name="email"> 
 
                <label for="pass">Password</label>
-               <input type="password" name="pass"> <br>
+               <input type="password" name="pass"> 
 
                <input type="submit" value="Enviar">
              </form>
