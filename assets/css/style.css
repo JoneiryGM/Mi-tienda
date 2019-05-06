@@ -158,7 +158,17 @@ a:hover{
     border-bottom: 2px solid #01B1EA;
 }
 
+#lateral ul{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+#lateral ul li{
+    list-style: square;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 /* FORMULARIOS */
 label,

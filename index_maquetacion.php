@@ -60,9 +60,11 @@
                <input type="submit" value="Enviar">
              </form>
 
-             <a href="#">Mis pedidos</a>
-             <a href="#">Gestionar Pedidos</a>
-             <a href="#">Gestionar Categorias</a>
+             <ul>
+               <li><a href="#">Mis pedidos</a></li>
+               <li><a href="#">Gestionar Pedidos</a></li>
+               <li><a href="#">Gestionar Categorias</a></li>
+            </ul>
            </div>
         </aside>
 
