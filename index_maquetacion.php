@@ -8,13 +8,14 @@
     <title>Maqueta del proyecto</title>
 </head>
 <body>
+<div id="container">
     <!-- LAS SECCIONES DEL INDEX: -->
     <!-- 1-CEBECERA -->
     <header id="header">
         <div id="logo">
            <img src="assets/img/ceta.png" alt="Logo camiseta">
            <a href="index.php">
-           Tienda de Camisetas
+           Tienda de camiseta
            </a>
         </div>
     </header>
@@ -95,5 +96,6 @@
     <footer id ="footer"> 
         <p>Desarrollado por Joneiry Guzman Montero  &copy; <?=date('Y');?></p>
     </footer>
+</div>
 </body>
 </html>
