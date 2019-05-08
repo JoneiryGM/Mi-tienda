@@ -40,7 +40,7 @@ a:hover{
 
 #header{
     height: 145px;   
-    background-color: white;
+    background-color: rgb(226, 226, 226);
     margin: 0px auto;
 }
 
@@ -128,7 +128,7 @@ a:hover{
 
 /* BARRA LATERAL */
 #lateral{
-    width: 25%;
+    width: 22%;
     min-height: 500px;
     float: left;
     margin-top: 20px;
@@ -209,7 +209,7 @@ input[type="email"]:focus{
 
 input[type="submit"],
 input[type="button"],
-button{
+button, .buttom{
     display: block;
     border-radius: 2px;
     width: auto;
@@ -222,9 +222,64 @@ button{
     cursor: pointer;
 }
 
+.buttom{
+    background: #33AE3D;
+    color: white !important;
+    text-decoration: none;
+}
 
+/* CENTRAL */
+#central{
+    width: 72%;
+    min-height: 500px;
+    float: right;
+    border-left: 1px solid #ccc;
+    box-shadow: -5px -1px 5px #ddd; 
+    padding: 20px
+}
+
+#central h1{
+    font-size: 24px;
+    /* min-height: 500px; */
+    font-weight: normal;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    /* margin-top: 20px; */
+    padding: 20px;
+    padding-top: 0px;
+    text-align: center;
+}
 
 /* PRODUCTOS */
+.product{
+    width: 30%;
+    /* height: 181.111px; */
+    /* border: 1px solid #ccc; */
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+
 .product img{
     width: 100px;
+    height: 150px;
+    margin-bottom: 10px;
 }
+
+.product h2{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product p{
+    /* font-size: 18px; */
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 6px;
+}
+
