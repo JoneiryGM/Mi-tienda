@@ -1,6 +1,4 @@
 
-        
-
            <h1>Productos destacados</h1>
            <div class="product">
              <img src="assets/img/ceta.png" alt="">
