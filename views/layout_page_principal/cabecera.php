@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?=base_url?>assets/css/style.css">
     <title>Maqueta del proyecto</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
     <!-- 1-CEBECERA -->
     <header id="header">
         <div id="logo">
-           <img src="assets/img/ceta.png" alt="Logo camiseta">
+           <img src="<?=base_url?>assets/img/ceta.png" alt="Logo camiseta">
            <a href="index.php">
            Tienda de camiseta
            </a>
