@@ -104,11 +104,12 @@ class UsuarioModel
             if($verify==$usuario->pass)
             {
                 $result = $usuario; 
+                // var_dump($result->rol);
+            }else{
+                echo "problema con las credenciales";
             }
         }
-        var_dump($password_login);
-        // var_dump($verify);
-        var_dump($usuario->pass);
+        
         return $result;
     }
 }

@@ -102,12 +102,38 @@ class UsuarioController
             $usuario->setPass($_POST['pass']);
 
             $identity = $usuario->login();
+            
 
-            var_dump($identity);
-            die();
-            // Crear una session
+            if($identity && is_object($identity))
+            {
+                // Crear una session
+                $_SESSION['identity'] = $identity;
+                echo "session creada";
+               
+                if($identity->rol == "admin"){
+                    echo "admin";
+                    $_SESSION['admin'] = true;
+                    // var_dump($identity->rol);
+                }
+            }else{
+                $_SESSION['error_login'] = 'identificacion fallida :/';
+            }
+            
       
         }
+        header("Location:".base_url);
+    }
+
+    public function logout()
+    {
+        if(isset($_SESSION['identity'])){
+            unset($_SESSION['identity']);
+        }
+
+        if(isset($_SESSION['admin'])){
+            unset($_SESSION['admin']);
+        }
+
         header("Location:".base_url);
     }
     
