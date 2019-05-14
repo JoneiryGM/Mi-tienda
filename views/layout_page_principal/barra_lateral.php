@@ -2,7 +2,7 @@
         <aside id="lateral"> 
            <div id="login" class="block_aside">
               <h3>Entrar a la Web</h3>
-             <form action="" method="post">
+             <form action="<?=base_url?>usuario/login" method="post">
                <label for="email">E-mail</label>
                <input type="email" name="email"> 
 

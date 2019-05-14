@@ -25,7 +25,7 @@ class UsuarioModel
     public function getNombre(){
         return $this->nombre;
     }
-    public function getApellido(){
+    public function getApellidos(){
         return $this->apellidos;
     }
     public function getEmail(){
@@ -56,7 +56,7 @@ class UsuarioModel
         $this->email = $this->db->real_escape_string($email);
     }
     public function setPass($pass){
-        $this->pass = password_hash($this->db->real_escape_string($pass), PASSWORD_BCRYPT, ['cost'=>4]);
+        $this->pass = $this->db->real_escape_string($pass);
         
     }
     public function setRol($rol){
@@ -69,7 +69,7 @@ class UsuarioModel
 
     public function save()
     {
-        $sql = "INSERT INTO usuarios VALUES(NULL,'{$this->getNombre()}','{$this->getApellido()}','{$this->getEmail()}','{$this->getPass()}','user',null)";
+        $sql = "INSERT INTO usuarios VALUES(NULL,'{$this->getNombre()}','{$this->getApellidos()}','{$this->getEmail()}','{$this->getPass()}','user',null)";
         $registrar = $this->db->query($sql);  
         $resultado=false;
 
@@ -80,5 +80,35 @@ class UsuarioModel
         }
 
         return $resultado;
+    }
+
+    public function login()
+    {
+        $result = false;
+        $email_login = $this->email;
+        $password_login = $this->pass;
+
+        // comprobacion si existe el usuario
+        $sql = "SELECT * FROM usuarios WHERE email='$email_login'";
+        $login = $this->db->query($sql);
+        
+
+        
+        if($login && $login->num_rows == 1){
+            $usuario = $login->fetch_object();
+
+            // varificar la pass 
+            // $verify = password_verify($password_login, $usuario->pass);
+            $verify = $password_login;
+
+            if($verify==$usuario->pass)
+            {
+                $result = $usuario; 
+            }
+        }
+        var_dump($password_login);
+        // var_dump($verify);
+        var_dump($usuario->pass);
+        return $result;
     }
 }

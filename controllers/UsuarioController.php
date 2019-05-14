@@ -90,5 +90,25 @@ class UsuarioController
         }
         header("location:".base_url.'usuario/register');
     }
+
+    public function login()
+    {
+        if(isset($_POST))
+        {
+            // IDENTIFICAR AL USUARIO
+            // Consulta a la bd
+            $usuario = new UsuarioModel();
+            $usuario->setEmail($_POST['email']);
+            $usuario->setPass($_POST['pass']);
+
+            $identity = $usuario->login();
+
+            var_dump($identity);
+            die();
+            // Crear una session
+      
+        }
+        header("Location:".base_url);
+    }
     
 }
