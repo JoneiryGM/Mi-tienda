@@ -31,7 +31,7 @@ class CategoriaModel
 
     public function getcategorias()
     {
-        $query_categorias = "SELECT * FROM categoria";
-        return $query_categorias;
+        $query = $this->db->query("SELECT * FROM categoria");
+        return $query;
     }
 }
