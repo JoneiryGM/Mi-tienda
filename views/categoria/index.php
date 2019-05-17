@@ -1,7 +1,18 @@
-<h1>Gestionar categorias</h1>
 
+<h1>Gestionar Categorias</h1>
 
-<?php while($mostrar = $getAll->fetch_object()):?>
-<?=$mostrar->nombre;?>-   ||   -<?=$mostrar->id;?>
+<table id="table">
+   <tr>
+      <th>ID</th>
+      <th>NOMBRE</th>
+  </tr>
 
-<?php endwhile;?>
+   <?php while($mostrar = $getAll->fetch_object()):?>
+
+   <tr>
+      <td><?=$mostrar->id;?></td>
+      <td><?=$mostrar->nombre;?></td>
+   </tr>
+
+   <?php endwhile;?>
+</table>

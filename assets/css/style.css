@@ -118,6 +118,18 @@ a:hover{
     background: rgb(73, 165, 201);
 }
 
+#table{
+    text-align: center;
+    widows: 100%;
+    border: 1px solid #555;
+    background: red;
+}
+
+td{
+    border: 1px solid #555;
+}
+
+
 /* CONTENT */
 #content{
     margin: 0px auto;
