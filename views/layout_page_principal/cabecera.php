@@ -22,26 +22,21 @@
     <!-- <?php require_once 'views/layout_page_principal/cabecera.php';?> -->
 
     <!-- 2-MENU -->
+    <?php $categorias = utils::showCategorias();?>
     <nav id="menu">
     <ul>
        <li>
           <a href="#">Inicio</a>
        </li>
+
+       <?php while($cate = $categorias->fetch_object()):?>
        <li>
-          <a href="#">Categoria1</a>
+          <a href="#"><?=$cate->nombre?></a>
        </li>
+       <?php endwhile;?>
+       
        <li>
-          <a href="#">Categoria2</a>
-       </li>
-       <li>
-          <a href="#">Categoria3</a>
-       </li>
-       <li>
-          <a href="#">Categoria4</a>
-       </li>
-       <li>
-          <a href="#">Categoria5</a>
-       </li>
+     
     </ul>
     </nav>
 
