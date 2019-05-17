@@ -24,8 +24,4 @@ e) poder cambiar el estados de los pedidos
 f) botones de aumentar y disminuir unidades
 g) boton de borrar elementos del carrito
 h) pagina individual de los productos
-<<<<<<< HEAD
 i) mis pedidos.
-=======
-i) mis pedidos
->>>>>>> efee1d51ec77c27152242ab64286b1f20c09a1ab

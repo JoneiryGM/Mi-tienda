@@ -1,7 +1,10 @@
 
 <h1>Gestionar Categorias</h1>
 
-<table id="table">
+<a href="<?=base_url?>categoria/crear" class="buttom buttom-small">
+Crear Categorias
+</a>
+<table>
    <tr>
       <th>ID</th>
       <th>NOMBRE</th>
