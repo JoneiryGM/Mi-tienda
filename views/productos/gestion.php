@@ -8,6 +8,7 @@
 <table>
    <tr>
       <th>ID</th>
+      <th>FECHA</th>
       <th>NOMBRE</th>
       <th>PRECIO</th>
       <th>STOCK</th>
@@ -17,6 +18,7 @@
 
    <tr>
       <td><?=$mostrar->id;?></td>
+      <td><?=$mostrar->fecha;?></td>
       <td><?=$mostrar->nombre;?></td>
       <td><?=$mostrar->precio;?></td>
       <td><?=$mostrar->stock;?></td>

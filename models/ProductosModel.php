@@ -63,7 +63,12 @@ class ProductosModel
         $this->descripcion = $this->db->real_escape_string($descripcion);
     }
     public function setPrecio($precio){
-        $this->precio = $this->db->real_escape_string($precio);
+        if($precio >= 1)
+        {
+            $this->precio = $this->db->real_escape_string($precio);
+        }else{
+            return "Numero Mal Insertado :/";
+        }
     }
     public function setStock($stock){
         $this->stock = $this->db->real_escape_string($stock);
@@ -72,10 +77,10 @@ class ProductosModel
         $this->oferta = $this->db->real_escape_string($oferta);;
     }
     public function setFecha($fecha){
-        $this->fecha = $this->db->real_escape_string($fecha);
+        $this->fecha = $fecha;
     }
     public function setImagen($imagen){
-        $this->imagen = $this->db->real_escape_string($imagen);
+        $this->imagen = $imagen;
     }
 
 
@@ -83,6 +88,19 @@ class ProductosModel
     {
         $sql = $this->db->query("SELECT * FROM productos ORDER BY id DESC");
         return $sql;
+    }
+
+    public function save()
+    {
+        $sql = "INSERT INTO productos VALUES(NULL,'{$this->getCategoria_id()}','{$this->getNombre()}','{$this->getDescripcion()}','{$this->getPrecio()}','{$this->getStock()}',NULL,CURDATE(),NULL)";
+        $save = $this->db->query($sql);  
+        $resultado=false;
+
+        if($save){
+          $resultado=true;
+        }
+
+        return $resultado;
     }
 
  
