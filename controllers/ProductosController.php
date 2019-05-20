@@ -29,11 +29,13 @@ class ProductosController
             $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : false;
             $precio = isset($_POST['precio']) ? $_POST['precio'] : false;
             $stock = isset($_POST['stock']) ? $_POST['stock'] : false;
+            // parseo de la variable
             $parStock = (int)$stock;
             $categorias = isset($_POST['categoria']) ? $_POST['categoria'] : false; 
+            // parseo de la variable
             $categoria = (int)$categorias;
             // $imagen = isset($_POST['imagen']) ? $_POST['imagen'] : false;
-            var_dump($categoria);
+            
             if($nombre && $descripcion && $precio && $parStock && $categoria)
             {
                 $producto = new ProductosModel();
@@ -42,7 +44,25 @@ class ProductosController
                 $producto->setPrecio($precio);
                 $producto->setStock($stock);
                 $producto->setCategoria_id($categoria);
-                // seguarda el objeto
+                
+                // guardar la imagen
+                $file = $_FILES['imagen'];
+                $fileName = $file['name'];
+                $mimeType = $file['type'];
+
+                // var_dump($mimeType);
+                // die();
+                // comprobando los tipos de mime type, de la imagen
+                if($mimeType == "image/jpg" || $mimeType == "image/jpeg" || $mimeType == "image/png" || $mimeType == "image/git")
+                {
+                    if(!is_dir('uploads/images'))
+                    {
+                        mkdir('uploads/images', 0777, true);
+                    }
+                    $producto->setImagen($fileName);
+                    move_uploaded_file($file['tmp_name'], 'uploads/images/'.$fileName);
+                }
+
                 $save = $producto->save();
 
                 if($save == true)
@@ -63,6 +83,6 @@ class ProductosController
             $_SESSION['producto'] = "FAILED, al Recibir los datos";
             var_dump($_SESSION['producto']);
         }
-        // header("Location:".base_url.'productos/gestion');
+        header("Location:".base_url.'productos/gestion');
     }
 }

@@ -1,6 +1,6 @@
 <h1>CREAR NUEVOS PRODUCTOS</h1>
 
-<form action="<?=base_url?>productos/save" method="POST">
+<form action="<?=base_url?>productos/save" method="POST" enctype="multipart/form-data">
 
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre">
@@ -29,5 +29,5 @@
     <input type="file" name="imagen">
     <br> <br>
 
-    <input type="submit" value="Guardar Producto">
+    <input type="submit" value="Guardar">
 </form>
