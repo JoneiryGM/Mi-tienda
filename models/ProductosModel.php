@@ -103,5 +103,31 @@ class ProductosModel
         return $resultado;
     }
 
+    public function delete()
+    {
+        $sql = "DELETE FROM productos WHERE id={$this->id}";
+        $delete = $this->db->query($sql);
+        $resultado=false;
+
+        if($delete){
+          $resultado=true;
+        }
+
+        return $resultado;
+    }
+
+    public function update()
+    {
+        $sql = "UPDATE FROM productos WHERE id={$this->id}";
+        $update = $this->db->query($sql);
+        $resultado=false;
+
+        if($update){
+          $resultado=true;
+        }
+
+        return $resultado;
+    }
+
  
 }

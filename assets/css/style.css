@@ -255,6 +255,20 @@ button, .buttom{
     margin-bottom: 20px;
 }
 
+.buttom-gestion{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.buttom-red{
+    background: red;
+    border: 1px solid orange;
+}
+
+.buttom-blue{
+    background: blue;
+    border: 1px solid orange;
+}
 /* CENTRAL */
 #central{
     width: 72%;

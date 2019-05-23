@@ -85,4 +85,34 @@ class ProductosController
         }
         header("Location:".base_url.'productos/gestion');
     }
+
+    public function eliminar()
+    {
+        utils::isAdmin();
+        
+        if(isset($_GET['id']))
+        {
+            $parameter_id = $_GET['id'];
+            $producto = new ProductosModel();
+            $producto->setId($parameter_id);
+            $delete = $producto->delete();
+
+            if($delete)
+            {
+                $_SESSION['delete'] = 'complete';
+            }else{
+                $_SESSION['delete'] = 'failed';
+            }
+        }else{
+            $_SESSION['delete'] = 'failed, no llego el parametro deseado';
+        }
+
+        header("Location:".base_url.'productos/gestion');
+        
+    }
+
+    public function editar()
+    {
+        utils::isAdmin();
+    }
 }
