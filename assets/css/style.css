@@ -43,6 +43,11 @@ td{
     border: 1px solid #555;
 }
 
+/* para el cuando este actualizando la imagen */
+.thumb{
+    width:100px;
+}
+
 
 /* CONTAINER */
 
@@ -261,13 +266,13 @@ button, .buttom{
 }
 
 .buttom-red{
-    background: red;
+    background: #F74640;
     border: 1px solid orange;
 }
 
 .buttom-blue{
-    background: blue;
-    border: 1px solid orange;
+    background: #339CFF;
+    border: 1px solid white;
 }
 /* CENTRAL */
 #central{

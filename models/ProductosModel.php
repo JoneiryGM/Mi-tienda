@@ -90,6 +90,12 @@ class ProductosModel
         return $sql;
     }
 
+    public function getOne()
+    {
+        $sql = $this->db->query("SELECT * FROM productos WHERE id ={$this->getId()}");
+        return $sql->fetch_object();
+    }
+
     public function save()
     {
         $sql = "INSERT INTO productos VALUES(NULL,'{$this->getCategoria_id()}','{$this->getNombre()}','{$this->getDescripcion()}','{$this->getPrecio()}','{$this->getStock()}',NULL,CURDATE(),'{$this->getImagen()}')";
@@ -116,12 +122,18 @@ class ProductosModel
         return $resultado;
     }
 
-    public function update()
+    public function edit()
     {
-        $sql = "UPDATE FROM productos WHERE id={$this->id}";
+        $sql = "UPDATE productos SET nombre='{$this->getNombre()}',descripcion='{$this->getDescripcion()}',precio={$this->getPrecio()},stock={$this->getStock()}, imagen='{$this->getImagen()}' WHERE id={$this->getId()} ";
+        // if($this->getImagen() != null)
+        // {
+        //     $sql.=",imagen='{$this->getImagen()}' WHERE id={$this->getId} ";
+        // }
+        // $sql.=",WHERE id={$this->getId}";
         $update = $this->db->query($sql);
         $resultado=false;
 
+        
         if($update){
           $resultado=true;
         }

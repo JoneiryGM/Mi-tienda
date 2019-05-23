@@ -3,8 +3,9 @@
 <a href="<?=base_url?>productos/crear" class="buttom buttom-small">
    Crear Productos
 </a>
+<!-- sessiones para enviar mensaje, de las confirmaciones -->
 <?php if(isset($_SESSION['producto']) && $_SESSION['producto'] == "COMPLETE"):?>
-    <strong style="color:blue;">El Producto Se Añadio Correctamente</strong>
+    <strong style="color:green;">El Producto Se Añadio Correctamente</strong>
 <?php elseif(isset($_SESSION['producto']) && $_SESSION['producto'] != "COMPLETE"):?>
     <strong style="color:red;">El Producto No se Guardo</strong>
 <?php endif;?>
@@ -18,6 +19,8 @@
 <?php endif;?>
 
 <?php utils::deleteSession('delete');?>
+
+
 <table>
    <tr>
       <th>ID</th>

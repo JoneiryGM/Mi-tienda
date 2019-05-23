@@ -46,24 +46,36 @@ class ProductosController
                 $producto->setCategoria_id($categoria);
                 
                 // guardar la imagen
-                $file = $_FILES['imagen'];
-                $fileName = $file['name'];
-                $mimeType = $file['type'];
-
-                // var_dump($mimeType);
-                // die();
-                // comprobando los tipos de mime type, de la imagen
-                if($mimeType == "image/jpg" || $mimeType == "image/jpeg" || $mimeType == "image/png" || $mimeType == "image/git")
+                if(isset($_FILES['imagen']))
                 {
-                    if(!is_dir('uploads/images'))
+                    
+                    $file = $_FILES['imagen'];
+                    $fileName = $file['name'];
+                    $mimeType = $file['type'];
+
+                   
+                    // comprobando los tipos de mime type, de la imagen
+                    if($mimeType == "image/jpg" || $mimeType == "image/jpeg" || $mimeType == "image/png" || $mimeType == "image/git")
                     {
-                        mkdir('uploads/images', 0777, true);
+                        if(!is_dir('uploads/images'))
+                        {
+                           mkdir('uploads/images', 0777, true);
+                        }
+                        $producto->setImagen($fileName);
+                        move_uploaded_file($file['tmp_name'], 'uploads/images/'.$fileName);
                     }
-                    $producto->setImagen($fileName);
-                    move_uploaded_file($file['tmp_name'], 'uploads/images/'.$fileName);
                 }
 
-                $save = $producto->save();
+                if(isset($_GET['id']))
+                {
+                    $id_parameter = $_GET['id'];
+                    $producto->setId($id_parameter);
+                    $save = $producto->edit();
+                    var_dump($save); die();
+                }else{
+                    $save = $producto->save();
+                }
+                
 
                 if($save == true)
                 {
@@ -83,8 +95,28 @@ class ProductosController
             $_SESSION['producto'] = "FAILED, al Recibir los datos";
             var_dump($_SESSION['producto']);
         }
-        header("Location:".base_url.'productos/gestion');
+        header("Location:".base_url."productos/gestion");
     }
+
+
+    public function editar()
+    {
+        utils::isAdmin();
+
+        if(isset($_GET['id'])){
+            $id_parameter = $_GET['id'];
+            $edit = true;
+
+            $producto = new ProductosModel();
+            $producto->setId($id_parameter);
+            $updating = $producto->getOne();
+
+            require_once 'views/productos/crear.php';
+        }else{
+            header("Location:".base_url.'productos/gestion');
+        }
+    }
+
 
     public function eliminar()
     {
@@ -111,8 +143,6 @@ class ProductosController
         
     }
 
-    public function editar()
-    {
-        utils::isAdmin();
-    }
+
+    
 }
