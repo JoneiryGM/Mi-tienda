@@ -1,24 +1,13 @@
 
-           <h1>Productos destacados</h1>
-           <div class="product">
-             <img src="<?=base_url?>assets/img/ceta.png" alt="">
-             <h2>Camiseta Negra asport</h2>
-             <p>30 dolares</p>
-             <a href="" class="buttom">Comprar</a>
-           </div>
+           <h1>Algunos Productos</h1>
 
+           <?php while($product = $productos->fetch_object()):?>
            <div class="product">
-             <img src="<?=base_url?>assets/img/ceta2.jpg" alt="">
-             <h2>Camiseta Negra sport</h2>
-             <p>30 dolares</p>
+             <img src="<?=base_url?>uploads/images/<?=$product->imagen;?>" alt="">
+             <h2><?=$product->nombre;?></h2>
+             <p><?=$product->precio;?> dolares</p>
              <a href="" class="buttom">Comprar</a>
            </div>
+           <?php endwhile;?>
 
-           <div class="product">
-             <img src="<?=base_url?>assets/img/ceta3.jpg" alt="">
-             <h2>Camiseta Negra sport</h2>
-             <p>30 dolares</p>
-             <a href="" class="buttom">Comprar</a>
-           </div>
-        </div>
-  
+           <!-- <?=base_url?>assets/img/ceta.png -->

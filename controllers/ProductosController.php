@@ -4,6 +4,10 @@ require_once 'models/ProductosModel.php';
 class ProductosController
 {
     public function index(){
+        $producto = new ProductosModel();   
+        $productos = $producto->getRandom(6);
+
+        var_dump($productos->num_rows);
         require_once 'views/productos/destacados.php';
     }
 
@@ -71,7 +75,7 @@ class ProductosController
                     $id_parameter = $_GET['id'];
                     $producto->setId($id_parameter);
                     $save = $producto->edit();
-                    var_dump($save); die();
+                   
                 }else{
                     $save = $producto->save();
                 }
@@ -95,7 +99,7 @@ class ProductosController
             $_SESSION['producto'] = "FAILED, al Recibir los datos";
             var_dump($_SESSION['producto']);
         }
-        header("Location:".base_url."productos/gestion");
+        header("LOCATION:".base_url.'productos/gestion');
     }
 
 
