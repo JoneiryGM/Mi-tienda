@@ -90,6 +90,17 @@ class ProductosModel
         return $sql;
     }
 
+    public function getAll_Category()
+    {
+        $sql = "SELECT  categoria.nombre, productos.nombre, productos.precio, productos.imagen FROM productos"
+        ." INNER JOIN categoria ON categoria.id = productos.categoria_id"
+        ." WHERE productos.categoria_id = {$this->getCategoria_id()}";
+        // ." ORDER BY id DESC";
+         
+        $category = $this->db->query($sql);
+        return $category;
+    }
+
     public function getOne()
     {
         $sql = $this->db->query("SELECT * FROM productos WHERE id ={$this->getId()}");
